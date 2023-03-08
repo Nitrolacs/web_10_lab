@@ -186,7 +186,6 @@ body.form {
 }
 
 .input-group {
-  margin-bottom: 50px;
   background-color: black !important;
 }
 
@@ -202,7 +201,7 @@ a.form {
 }
 
 h1.form {
-  margin-top: 200px;
+  margin-top: 100px;
 }
 
 .my__img {
@@ -276,6 +275,12 @@ h1.form {
   .my__img {
     width: 100%;
   }
+}
+label {
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-bottom: 30px;
+  color: #afafb6;
 }
 
 /*# sourceMappingURL=style.css.map */
