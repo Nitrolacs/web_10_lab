@@ -1,5 +1,7 @@
 const form = document.forms["sub_form"];
 const button = document.getElementById("button");
+const nameInput = document.getElementById("name");
+const surnameInput = document.getElementById("surname");
 
 const inputArr = Array.from(form);
 const validInputArr = [];
@@ -70,4 +72,13 @@ function serializeForm(formNode) {
 function handleFormSubmit(event) {
 	event.preventDefault()
 	serializeForm(form)
- }
+}
+
+nameInput.addEventListener('keyup', function () {
+	if (validInputArr[0].getAttribute("is-valid") == 0) {
+		surnameInput.disabled = true;
+	} else {
+		surnameInput.disabled = false;
+		surnameInput.value = '';
+	}
+})
