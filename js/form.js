@@ -12,6 +12,7 @@ inputArr.forEach((el) => {
 });
 
 form.addEventListener("input", inputHandler);
+form.addEventListener('submit', handleFormSubmit);
 button.addEventListener("click", buttonHandler);
 
 function inputHandler({target}) {
@@ -49,5 +50,24 @@ function buttonHandler(e) {
 		e.preventDefault();
 		button.classList.remove("btn-primary");
 		button.classList.add("btn-danger");
+		alert("Введены неверные данные!");
 	}
 }
+
+function serializeForm(formNode) {
+	const { elements } = formNode
+	const data = Array.from(elements)
+	  .filter(item => item.name != "button")
+	  .map((element) => {
+		 const { name, value } = element
+ 
+		 return { name, value }
+	  })
+ 
+	console.log(data)
+}
+
+function handleFormSubmit(event) {
+	event.preventDefault()
+	serializeForm(form)
+ }
